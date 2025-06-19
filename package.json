@@ -12,11 +12,14 @@
     "axios": "^1.10.0",
     "classname": "^0.0.0",
     "dayjs": "^1.11.13",
+    "lodash": "^4.17.21",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.6.2",
     "react-scripts": "5.0.1",
+    "rodash": "^1.0.2",
+    "scss": "^0.2.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

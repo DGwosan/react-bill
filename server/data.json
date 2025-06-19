@@ -80,7 +80,56 @@
         {
             "type": "pay",
             "money": -10,
-            "date": "2023-04-03T11:14:56.036Z",
+            "date": "2025-06-03T11:11:56.036Z",
+            "useFor": "food",
+            "id": 19
+        },
+        {
+            "type": "pay",
+            "money": -10,
+            "date": "2025-06-03T11:12:56.036Z",
+            "useFor": "food",
+            "id": 19
+        },
+        {
+            "type": "income",
+            "money": 100,
+            "date": "2025-06-03T11:13:56.036Z",
+            "useFor": "food",
+            "id": 19
+        },
+        {
+            "type": "pay",
+            "money": -10,
+            "date": "2025-06-03T11:14:56.036Z",
+            "useFor": "food",
+            "id": 19
+        },
+        {
+            "type": "pay",
+            "money": -10,
+            "date": "2025-06-04T11:11:56.036Z",
+            "useFor": "food",
+            "id": 19
+        },
+        {
+            "type": "pay",
+            "money": -10,
+            "date": "2025-06-04T11:12:56.036Z",
+            "useFor": "food",
+            "id": 19
+        },
+        {
+            "type": "income",
+            "money": 100,
+            "date": "2025-06-04T11:13:56.036Z",
+            "useFor": "food",
+            "id": 19
+        },
+        {
+            "type": "pay",
+            "money": -10,
+            "date": "2025-06-04T11:14:56.036Z",
             "useFor": "food",
             "id": 19
         }
