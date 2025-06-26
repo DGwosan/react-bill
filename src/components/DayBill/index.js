@@ -1,6 +1,8 @@
 import classNames from 'classnames'
 import './index.scss'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
+import { billTypeToName } from '@/adaptation/billListData'
+import Icon from '@/icon/icon'
 
 const DailyBill = ({date,billList}) => {
     //对当天的的数据进行处理，求支出，收入，结余（新的hook计算属性）
@@ -12,13 +14,15 @@ const DailyBill = ({date,billList}) => {
           }
       }, [billList])
   
+    const [showDay , setShowDay] = useState(false)
+  
     return (
     <div className={classNames('dailyBill')}>
       <div className="header">
         
         <div className="dateIcon">
           <span className="date">{date}</span>
-          <span className={classNames('arrow')}></span>
+          <span className={classNames('arrow',showDay && 'expand' )} onClick={()=>setShowDay(!showDay)}></span>
         </div>
         
         <div className="oneLineOverview">
@@ -37,6 +41,24 @@ const DailyBill = ({date,billList}) => {
         </div>
         
       </div>
+
+      {/* 单日列表 */}
+       <div className="billList" style={{display: showDay? 'block':'none'}}>
+        {billList.map(item => {
+         return (
+           <div className="bill" key={item.id}>
+             <Icon type={item.useFor} />
+              <div className="detail">
+               <div className="billType">{billTypeToName[item.useFor]}</div>
+              </div>
+              <div className={classNames('money', item.type)}>
+                 {item.money.toFixed(2)}
+              </div>
+      </div>
+    )
+  })}
+</div>
+      
     </div>
   )
 }
