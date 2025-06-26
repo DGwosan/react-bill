@@ -1,4 +1,5 @@
 import axios from "axios";
+import { data } from "react-router-dom";
 
 const { createSlice } = require("@reduxjs/toolkit");
 
@@ -10,11 +11,16 @@ const billStore = createSlice({
     reducers:{
        setBillList(state,action){
           state.billList = action.payload
+       },
+
+       //添加账单
+       addBill(state, action) {
+          state.billList.push(action.payload)
        }
     }
 })
 
-const {setBillList} =  billStore.actions
+const {setBillList,addBill} =  billStore.actions
 const billreducer = billStore.reducer
 
 const fetchBill = ()=>{
@@ -24,9 +30,17 @@ const fetchBill = ()=>{
   }
 }
 
+const addBillList = (data) => {
+   return async (dispatch) => {
+      const res = await axios.post('http://localhost:8888/ka', data)
+      dispatch(addBill(res.data))
+   }
+}
 
 
-export {fetchBill}
+
+
+export {fetchBill,addBillList}
 export default billreducer
 
 
